@@ -51,8 +51,7 @@ then
     #     try=$(expr $try + 1)
     #     sleep 1s
     # done
-    docker exec $CONTAINER_NAME sh -c "mysql -u root -p$ROOT_PASSWORD < $MYSQL_HOME/sakila-schema.sql 2>/dev/null"
-    docker exec $CONTAINER_NAME sh -c "mysql -u root -p$ROOT_PASSWORD < $MYSQL_HOME/sakila-data.sql 2>/dev/null"
+    docker exec $CONTAINER_NAME sh -c "mysql -u root -p$ROOT_PASSWORD < $MYSQL_HOME/sakila-films-dump.sql 2>/dev/null"
 
     exit 0
 fi
