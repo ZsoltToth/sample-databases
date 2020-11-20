@@ -56,8 +56,12 @@ then
             exit 1
         fi
     done
+    printf "Successfull Connection\n"
+    printf "Importing Data...\n"
 
     docker exec $CONTAINER_NAME sh -c "mysql -u root -p$ROOT_PASSWORD < $MYSQL_HOME/sakila-films-dump.sql 2>/dev/null"
+
+    printf "Data was imported!\n"
 
     exit 0
 fi
