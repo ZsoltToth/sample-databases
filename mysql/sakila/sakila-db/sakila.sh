@@ -56,6 +56,7 @@ then
             exit 1
         fi
     done
+
     docker exec $CONTAINER_NAME sh -c "mysql -u root -p$ROOT_PASSWORD < $MYSQL_HOME/sakila-schema.sql 2>/dev/null"
     docker exec $CONTAINER_NAME sh -c "mysql -u root -p$ROOT_PASSWORD < $MYSQL_HOME/sakila-data.sql 2>/dev/null"
 
